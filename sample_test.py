@@ -10,8 +10,6 @@ from model import EncoderCNN, DecoderRNN
 from PIL import Image
 
 
-# Device configuration
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def load_image(image_path, transform=None):
     image = Image.open(image_path)
@@ -23,14 +21,6 @@ def load_image(image_path, transform=None):
     return image
 
 def main(args):
-    #encoder_path='data/ibm/models/encoder-1-94.ckpt'
-    #decoder_path='data/ibm/models/decoder-1-94.ckpt'
-    #vocab_path='data/ibm/vocab.pkl'
-    #embed_size=256
-    #hidden_size=512
-    #num_layers=1
-    #image='data/ibm/IITD_Hackathon_Dataset/images/img_womens_stiletto_304.jpg'
-    # Image preprocessing
     transform = transforms.Compose([
         transforms.ToTensor(), 
         transforms.Normalize((0.485, 0.456, 0.406), 
@@ -47,12 +37,6 @@ def main(args):
     # Load the trained model parameters
     encoder.load_state_dict(torch.load(encoder_path))
     decoder.load_state_dict(torch.load(decoder_path))
-    #%pylab inline
-    #import matplotlib.pyplot as plt
-    #import matplotlib.image as mpimg
-    #img=mpimg.imread(image)
-    #imgplot = plt.imshow(img)
-    #plt.show()
     
     # Prepare an image
     image = load_image(image, transform)
