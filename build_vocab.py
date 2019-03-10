@@ -1,23 +1,7 @@
 import nltk
 import pickle
-import argparse
 from collections import Counter
-from pycocotools.coco import COCO
 import collections
-import argparse
-import torch
-import torch.nn as nn
-import numpy as np
-import os
-import pickle
-import torch.utils.data as data
-from torch.nn.utils.rnn import pack_padded_sequence
-from torchvision import transforms
-from PIL import Image
-import nltk
-import torchvision.transforms as transforms
-import collections
-from pycocotools.coco import COCO
 import time
 import json
 
