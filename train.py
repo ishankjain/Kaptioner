@@ -94,3 +94,4 @@ evaluate_model_beam_search(model, X1val, X2val, tokenizer, max_length, beam_inde
 X1test, X2test = loadtestData(config)
 print('Model trained successfully. Running model on validation set for calculating BLEU score using BEAM search with k={}'.format(config['beam_search_k']))
 evaluate_model_beam_search(model, X1test, X2test, tokenizer, max_length, beam_index=config['beam_search_k'])
+
